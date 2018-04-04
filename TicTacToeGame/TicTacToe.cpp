@@ -12,7 +12,7 @@ char ttPlr = ttX;//current player
 bool ttOver = false;
 
 //board reference
-char *TicTacToe::board[3][3];
+char TicTacToe::board[3][3];
 
 TicTacToe::TicTacToe()
 {
@@ -74,40 +74,40 @@ void TicTacToe::ttInput()
 	//Coordinates for players
 	switch (ttUsr) {
 	case '1':
-		if (board[0][0] == &ttX || board[0][0] == &ttO)cout << "Point Taken!" << endl;
-		else board[0][0] = &ttPlr;
+		if (board[0][0] == ttX || board[0][0] == ttO)cout << "Point Taken!" << endl;
+		else board[0][0] = ttPlr;
 		break;
 	case '2':
-		if (board[0][1] == &ttX || board[0][1] == &ttO)cout << "Point Taken!" << endl;
-		else board[0][1] = &ttPlr;
+		if (board[0][1] == ttX || board[0][1] == ttO)cout << "Point Taken!" << endl;
+		else board[0][1] = ttPlr;
 		break;
 	case '3':
-		if (board[0][2] == &ttX || board[0][2] == &ttO)cout << "Point Taken!" << endl;
-		else board[0][2] = &ttPlr;
+		if (board[0][2] == ttX || board[0][2] == ttO)cout << "Point Taken!" << endl;
+		else board[0][2] = ttPlr;
 		break;
 	case '4':
-		if (board[1][0] == &ttX || board[1][0] == &ttO)cout << "Point Taken!" << endl;
-		else board[1][0] = &ttPlr;
+		if (board[1][0] == ttX || board[1][0] == ttO)cout << "Point Taken!" << endl;
+		else board[1][0] = ttPlr;
 		break;
 	case '5':
-		if (board[1][1] == &ttX || board[1][1] == &ttO)cout << "Point Taken!" << endl;
-		else board[1][1] = &ttPlr;
+		if (board[1][1] == ttX || board[1][1] == ttO)cout << "Point Taken!" << endl;
+		else board[1][1] = ttPlr;
 		break;
 	case '6':
-		if (board[1][2] == &ttX || board[1][2] == &ttO)cout << "Point Taken!" << endl;
-		else board[1][2] = &ttPlr;
+		if (board[1][2] == ttX || board[1][2] == ttO)cout << "Point Taken!" << endl;
+		else board[1][2] = ttPlr;
 		break;
 	case '7':
-		if (board[2][0] == &ttX || board[2][0] == &ttO)cout << "Point Taken!" << endl;
-		else board[2][0] = &ttPlr;
+		if (board[2][0] == ttX || board[2][0] == ttO)cout << "Point Taken!" << endl;
+		else board[2][0] = ttPlr;
 		break;
 	case '8':
-		if (board[2][1] == &ttX || board[2][1] == &ttO)cout << "Point Taken!" << endl;
-		else board[2][1] = &ttPlr;
+		if (board[2][1] == ttX || board[2][1] == ttO)cout << "Point Taken!" << endl;
+		else board[2][1] = ttPlr;
 		break;
 	case '9':
-		if (board[2][2] == &ttX || board[2][2] == &ttO)cout << "Point Taken!" << endl;
-		else board[2][2] = &ttPlr;
+		if (board[2][2] == ttX || board[2][2] == ttO)cout << "Point Taken!" << endl;
+		else board[2][2] = ttPlr;
 		break;
 	case 'C':
 	case 'c':
@@ -130,10 +130,9 @@ void TicTacToe::ttInput()
 
 void TicTacToe::ttClear()
 {
-	char cl = '_';
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
-			board[i][j] = &cl;
+			board[i][j] = '_';
 		}
 	}
 }
@@ -178,11 +177,11 @@ void TicTacToe::ttWinRules()
 
 	for (int i = 0; i < 3; i++)
 	{
-		if ((board[i][0] == &ttPlr) && (board[i][1] == &ttPlr) && (board[i][2] == &ttPlr))wintt(ttPlr);
-		else if ((board[0][i] == &ttPlr) && (board[1][i] == &ttPlr) && (board[2][i] == &ttPlr))wintt(ttPlr);
+		if ((board[i][0] == ttPlr) && (board[i][1] == ttPlr) && (board[i][2] == ttPlr))wintt(ttPlr);
+		else if ((board[0][i] == ttPlr) && (board[1][i] == ttPlr) && (board[2][i] == ttPlr))wintt(ttPlr);
 
-		if ((board[0][0] == &ttPlr) && (board[1][1] == &ttPlr) && (board[2][2] == &ttPlr))wintt(ttPlr);
-		if ((board[0][2] == &ttPlr) && (board[1][1] == &ttPlr) && (board[2][0] == &ttPlr))wintt(ttPlr);
+		if ((board[0][0] == ttPlr) && (board[1][1] == ttPlr) && (board[2][2] == ttPlr))wintt(ttPlr);
+		if ((board[0][2] == ttPlr) && (board[1][1] == ttPlr) && (board[2][0] == ttPlr))wintt(ttPlr);
 	}
 
 

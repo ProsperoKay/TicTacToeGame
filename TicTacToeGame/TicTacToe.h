@@ -33,7 +33,7 @@ private:
 	static void ttWinRules();
 
 	//Board dat content
-	static char *board[3][3];
+	static char board[3][3];
 
 };
 
